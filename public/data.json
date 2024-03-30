@@ -1,0 +1,40 @@
+{
+    "projets": [
+        {
+            "id": 1,
+            "title": "Sophie Bluel",
+            "cover": "/images/SophiePreview.png",
+            "descriptionFr": "Concevoir une page web dynamique avec seulement du javascript natif",
+            "descriptionEn": "Create a dynamic website using only native javascript.",
+            "logo": ["/images/Css3.png","/images/Html5.png","/images/Js.png"],
+            "favori": true
+        },
+        {
+            "id": 2,
+            "title": "724 Events",
+            "cover": "/images/724Preview.png",
+            "descriptionFr": "Déboguer l'application react d'une agence evenementiel.",
+            "descriptionEn": "Create a dynamic website using only native javascript.",
+            "logo": ["/images/React.png","/images/Css3.png"],
+            "favori": true
+        },
+        {
+            "id": 3,
+            "title": "Kasa",
+            "cover": "/images/KasaPreview.png",
+            "descriptionFr": "Realisation d'une application de location d'appartement. Initiation à React",
+            "descriptionEn": "Create a dynamic website using only native javascript.",
+            "logo": ["/images/React.png"],
+            "favori": true
+        },
+        {
+            "id": 4,
+            "title": "Test",
+            "cover": "/images/724Preview.png",
+            "descriptionFr": "TEST",
+            "descriptionEn": "Create a dynamic website using only native javascript.",
+            "logo": ["/images/React.png"],
+            "favori": false
+        }
+    ]
+}

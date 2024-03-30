@@ -1,0 +1,17 @@
+.overlay_works{
+    position: absolute;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.overlay_contents{
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.fade_transition{
+    transition: all 0.15s ease-in-out;
+
+}
+

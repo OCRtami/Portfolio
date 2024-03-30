@@ -1,0 +1,98 @@
+main{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: background-image 0.2s ease-in-out;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
+.main_containers{
+    display: flex; flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+}
+
+.containers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    gap: 50px;
+    border-radius: 15px;
+    z-index: 20;
+    width: 80%;
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: blur(4px);
+}
+
+.skills{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.skills li{
+    display: flex;
+    transition: ease-in-out 0.2s;
+}
+
+.skills:hover li:hover{
+    filter: brightness(100%);
+}
+
+.skills:hover li:not(:hover){
+    filter: brightness(60%);
+}
+
+.work{
+    display: flex;
+    flex-direction: column;
+    background-color: #FBF9F1;
+    width: 250px;
+    height: 400px;    
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: transform ease-in-out 0.15s;
+}
+
+.work:hover{
+    transform:scale(1.08);
+}
+
+.work .work_picture{
+    height: 100%;
+    min-height: 250px;
+    overflow: hidden;
+}
+
+.work .work_picture img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.work  .work_description{
+    overflow: hidden;
+    height: 100%;
+    margin: 12px;
+    text-overflow: ellipsis;
+    display: flex;
+    flex-direction: column;
+    text-overflow: ellipsis;
+    white-space: wrap;
+}
+
+
+
+.projets_button{
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
