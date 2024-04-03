@@ -31,6 +31,7 @@ main{
     width: 80%;
     background-color: rgba(255,255,255,0.5);
     backdrop-filter: blur(4px);
+    min-width: 275px;
 }
 
 .skills{
@@ -95,4 +96,12 @@ main{
 .projets_button{
     text-shadow: 0px 0px 10px rgba(0,0,0,0.3);
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px){
+
+    .containers{
+        flex-direction: column;
+    }
+
 }

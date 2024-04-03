@@ -9,10 +9,6 @@ import logoReact from "../assets/logo/React.png"
 import darkBackground from "../assets/Dark_Bg.jpg";
 import lightBackground from "../assets/Light_Bg.jpg"
 import "./css/Home.css";
-//Projet Img
-import SophieJS from "../assets/Projets_Img/Tetete.png"
-import SophiePreview from "/images/SophiePreview.png";
-import KasaPreview from "/images/KasaPreview.png";
 
 import DataContext from "../utilities/context";
 
@@ -45,7 +41,7 @@ const Home = () =>{
             <div> <Meteors className={storeTheme === "dark" ? null : "hidden"} number={10}></Meteors> </div>
 
             {/* Partie Profil (Photo,Description...) */}
-            <div className="containers  dark:bg-[rgba(14,14,14,0.7)] p-5 ">
+            <div id="home" className="containers  dark:bg-[rgba(14,14,14,0.7)] p-5 ">
 
                {/* Photo du profil */}
                <div className="profile_picture w-[150px] min-w-[150px] ">
@@ -74,7 +70,7 @@ const Home = () =>{
             </div>
 
             {/* Projets / Portfolio */}
-            <div className="containers  dark:bg-[rgba(14,14,14,0.7)] p-5 ">
+            <div id="portfolio" className="containers  dark:bg-[rgba(14,14,14,0.7)] p-5 ">
 
                <div className="projets flex flex-col items-center w-full">
                   
@@ -82,7 +78,7 @@ const Home = () =>{
                      Portfolio
                   </h2>
 
-                  <ul className="flex flex-wrap  gap-[2rem] p-8 dark:brightness-95 w-full">
+                  <ul className="flex flex-wrap justify-center gap-[2rem] p-1 sm:p-8 dark:brightness-95 w-full">
                      {data && filteredData.map((projet) => (
 
                         <li key={projet.id} className="work relative">
@@ -112,8 +108,6 @@ const Home = () =>{
                      </li> */}
                   </ul>
 
-                  <div className="projets_button bg-[rgba(255,255,255,0.9)] dark:text-white dark:bg-slate-800 text-black font-bold rounded-3xl w-fit p-3"> Voir plus</div>
-
                </div>
 
             </div>
@@ -121,9 +115,20 @@ const Home = () =>{
             <div className="containers dark:bg-[rgba(14,14,14,0.7)] p-5">
 
                <div className="projets flex flex-col items-center w-full">
-                  <h2 className="text-[32px] align-baseline self-baseline font-medium w-max h-max rounded-lg dark:text-dark-ft">
+
+                  <h2 id="apropos" className="text-[32px] align-baseline self-baseline font-medium w-max h-max rounded-lg dark:text-dark-ft">
                      {favLang ==="fr" ? "A propos" :"About"}
                   </h2>
+                  
+                  <div className="max-w-[800px] dark:text-dark-ft pt-4" >
+                        <p className="dark:text-dark-ft">Bonjour et bievenue sur mon Portfolio !</p> 
+                        <br/>
+                        <p className="dark:text-dark-ft"> Formé en HTML, CSS et JavaScript, j'ai acquis une solide base d'expérience dans la création de sites web fonctionnels.
+                        Mon parcours m'a permis de d'acquérir les fondamentaux du web et d'explorer de nouvelles techniques pour offrir une expérience utilisateur optimale.
+                        Explorez mon portfolio pour découvrir mes projets et n'hésitez pas à me contacter pour discuter de vos besoins. 
+                        <br/>Merci de votre visite !</p>
+                  </div>
+
                </div>
 
             </div>
@@ -133,10 +138,10 @@ const Home = () =>{
             <div className="projets flex flex-col items-center w-full">
 
                <h2 className="text-[32px] align-baseline self-baseline font-medium w-max h-max rounded-lg dark:text-dark-ft">
-                     Contact
-                  </h2>
+                  Contact
+               </h2>
 
-                  <div>
+                  <div id="contact" className=" w-full ">
                      <Contact></Contact>
                   </div>
                </div>
