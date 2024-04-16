@@ -17,31 +17,33 @@ import { Meteors } from "../ui/meteors";
 import OverlayWork from "../components/OverlayWork/OverlayWork";
 import Bulle from "../components/Bulle/Bulle";
 import Logo from "../components/Logo/Logo";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Contact from "../components/Contact/Contact";
 
 
 const Home = () =>{
 
-   const storeTheme = useStore((state) => state.theme);
+   const theme = useStore((state) => state.theme);
    const favLang = useStore((state) => state.langue)
    const {data} = useContext(DataContext);
 
+
+   const [popUp, setPopUp] = useState(false);
    const filteredData = (data?.filter(e=> e.favori === true)) || [];
 
    return(
 
 
       <main className=" bg-slate-100 dark:text-dark-ft dark:bg-neutral-900"
-         style={ storeTheme === "light" ? {backgroundImage:`url(${lightBackground})`}  : {backgroundImage:`url(${darkBackground})`} }>
+         style={ theme === "light" ? {backgroundImage:`url(${lightBackground})`}  : {backgroundImage:`url(${darkBackground})`} }>
 
          <div className="main_containers">
             
-            {/* Effet meteor Theme Sombre */}
-            <div> <Meteors className={storeTheme === "dark" ? null : "hidden"} number={10}></Meteors> </div>
+               {/* Effet meteor Theme Sombre */}
+               <div> <Meteors className={theme === "dark" ? null : "hidden"} number={10}></Meteors> </div>
 
             {/* Partie Profil (Photo,Description...) */}
-            <div id="home" className="containers  dark:bg-[rgba(14,14,14,0.7)] p-5 ">
+            <div id="home" className="containers sm:w-fit  dark:bg-[rgba(14,14,14,0.7)] p-5 ">
 
                {/* Photo du profil */}
                <div className="profile_picture w-[150px] min-w-[150px] ">
@@ -82,7 +84,7 @@ const Home = () =>{
                      {data && filteredData.map((projet) => (
 
                         <li key={projet.id} className="work relative">
-                        <OverlayWork>
+                        <OverlayWork link={projet.link}>
                            {projet.logo.map((logo,index)=>(
                               <Logo key={index} src={logo}></Logo>
                            ))}
@@ -112,7 +114,8 @@ const Home = () =>{
 
             </div>
 
-            <div className="containers dark:bg-[rgba(14,14,14,0.7)] p-5">
+            {/* Description parcours */}
+            <div className="containers w-fit mx-[10%] dark:bg-[rgba(14,14,14,0.7)] p-5">
 
                <div className="projets flex flex-col items-center w-full">
 
@@ -121,19 +124,27 @@ const Home = () =>{
                   </h2>
                   
                   <div className="max-w-[800px] dark:text-dark-ft pt-4" >
-                        <p className="dark:text-dark-ft">Bonjour et bievenue sur mon Portfolio !</p> 
+                        <p className="dark:text-dark-ft">{favLang ==="fr" ? "Bonjour et bievenue sur mon portfolio !" : "Hello and welcome to my portfolio !"}</p>
                         <br/>
-                        <p className="dark:text-dark-ft"> Formé en HTML, CSS et JavaScript, j'ai acquis une solide base d'expérience dans la création de sites web fonctionnels.
+                        {favLang ==="fr" ?
+                        <p className="dark:text-dark-ft">
+                        Formé en HTML, CSS et JavaScript, j'ai acquis une solide base d'expérience dans la création de sites web fonctionnels.
                         Mon parcours m'a permis de d'acquérir les fondamentaux du web et d'explorer de nouvelles techniques pour offrir une expérience utilisateur optimale.
-                        Explorez mon portfolio pour découvrir mes projets et n'hésitez pas à me contacter pour discuter de vos besoins. 
-                        <br/>Merci de votre visite !</p>
+                        Explorez mon portfolio pour découvrir mes projets et n'hésitez pas à me contacter pour discuter de vos besoins.<br/><br/>
+                        Merci de votre visite !</p>
+                        : 
+                        <p className="dark:text-dark-ft">Trained in HTML, CSS and JavaScript, I have acquired a solid base of experience in creating functional websites.
+                        My background allowed me to acquire the fundamentals of the web and explore new techniques to offer an optimal user experience.
+                        Explore my portfolio to discover my projects and do not hesitate to contact me to discuss your needs.<br/><br/>
+                        Thank for your visit !</p>}
                   </div>
 
                </div>
 
             </div>
 
-            <div className="containers dark:bg-[rgba(14,14,14,0.7)] p-5">
+            {/* Formulaire */}
+            <div className="containers dark:bg-[rgba(14,14,14,0.7)] p-5 w-[50%]">
 
             <div className="projets flex flex-col items-center w-full">
 
@@ -142,7 +153,7 @@ const Home = () =>{
                </h2>
 
                   <div id="contact" className=" w-full ">
-                     <Contact></Contact>
+                     <Contact setPopUp={setPopUp}></Contact>
                   </div>
                </div>
 
@@ -150,6 +161,7 @@ const Home = () =>{
             </div>
 
          </div>
+         {popUp && <div className="fixed bottom-0 font-bold left-0 p-4 m-5 bg-lime-300  z-[30] rounded-md"><p className="text-black">Envoyé !</p></div>}
 
       </main>
     )
@@ -157,7 +169,3 @@ const Home = () =>{
 
 
 export default Home;
-
-    //#F6DAFF violet
-    //#DAFFF6 blue clair
-    //#FBF9F1 creme

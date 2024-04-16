@@ -7,6 +7,7 @@
             "descriptionFr": "Concevoir une page web dynamique avec seulement du javascript natif",
             "descriptionEn": "Create a dynamic website using only native javascript.",
             "logo": ["/images/Css3.png","/images/Html5.png","/images/Js.png"],
+            "link": "https://github.com/OCRtami/Projet-6-OPC",
             "favori": true
         },
         {
@@ -16,6 +17,7 @@
             "descriptionFr": "Déboguer l'application react d'une agence evenementiel.",
             "descriptionEn": "Create a dynamic website using only native javascript.",
             "logo": ["/images/React.png","/images/Css3.png"],
+            "link": "https://github.com/OCRtami/Projet-10-OPC",
             "favori": true
         },
         {
@@ -25,6 +27,7 @@
             "descriptionFr": "Realisation d'une application de location d'appartement. Initiation à React",
             "descriptionEn": "Create a dynamic website using only native javascript.",
             "logo": ["/images/React.png"],
+            "link": "https://github.com/OCRtami/Projet-8-OPC",
             "favori": true
         },
         {

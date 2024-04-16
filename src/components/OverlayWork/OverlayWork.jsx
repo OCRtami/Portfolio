@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./css/OverlayWork.css"
 
-const overlayWork= ({children}) =>{
+const overlayWork= ({children,link}) =>{
 
    const [isVisible, setIsVisible] = useState(false);
 
@@ -19,7 +19,7 @@ const overlayWork= ({children}) =>{
             {children}
          </div>
          <p className="text-white mt-5">For more information</p>
-         <p className="text-white">Click <a href="https://google.fr" className="underline">here</a> to check the Github</p>
+         <p className="text-white">Click <a href={link} className="underline">here</a> to check the Github</p>
          
       </div>
       <div className={`absolute transition-opacity duration-[250ms] h-full w-[110%] bg-[rgba(0,0,0,0.8)] backdrop-blur-[4px] ${ isVisible ? "opacity-100" : "opacity-0"}`}></div>
